@@ -47,8 +47,8 @@ class CounterImpl: Counter
 
         var strNumber = ""
 
-//        go for each symbol till the operation sign
-//        appending all letters to a variable
+        //go for each symbol till the operation sign
+        //appending all letters to a variable
         for (sym: Char in expression[0].reversed() ) {
             if (outputController.isSign(sym.toString()) || sym == '(' || sym == ')') {
                 break

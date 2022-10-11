@@ -201,86 +201,39 @@ class MainActivity : AppCompatActivity()
     @SuppressLint("SetTextI18n")
     private fun engineeringMode()//switch to engineering mode
     {
+        val buttonsArray = arrayOf(lnX, lgX, tgX, cosX, sinX)
+
         if (additionalRow.visibility == View.GONE)
         {
             additionalRow.visibility = View.VISIBLE
-            lnX.visibility = View.VISIBLE
-            lgX.visibility = View.VISIBLE
-            tgX.visibility = View.VISIBLE
-            cosX.visibility = View.VISIBLE
-            sinX.visibility = View.VISIBLE
 
-            lnX.startAnimation(TranslateAnimation(100f, 0f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
-
-            lgX.startAnimation(TranslateAnimation(100f, 0f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
-
-            tgX.startAnimation(TranslateAnimation(100f, 0f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
-
-            cosX.startAnimation(TranslateAnimation(100f, 0f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
-
-            sinX.startAnimation(TranslateAnimation(100f, 0f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
+            for (button in buttonsArray)
+            {
+                button.visibility = View.VISIBLE
+                button.startAnimation(TranslateAnimation(100f, 0f,
+                    0f, 0f)
+                    .apply {
+                        duration = 275
+                    })
+            }
             bFolder.text = "fold"
         } else
         {
-            lnX.startAnimation(TranslateAnimation(0f, 50f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
-
-            lgX.startAnimation(TranslateAnimation(0f, 50f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
-
-            tgX.startAnimation(TranslateAnimation(0f, 50f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
-
-            cosX.startAnimation(TranslateAnimation(0f, 50f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
-
-            sinX.startAnimation(TranslateAnimation(0f, 50f,
-                0f, 0f)
-                .apply {
-                    duration = 275
-                })
             additionalRow.visibility = View.GONE
-            lnX.visibility = View.GONE
-            lgX.visibility = View.GONE
-            tgX.visibility = View.GONE
-            cosX.visibility = View.GONE
-            sinX.visibility = View.GONE
+
+            for (button in buttonsArray)
+            {
+                button.visibility = View.VISIBLE
+                button.startAnimation(TranslateAnimation(0f, 50f,
+                    0f, 0f)
+                    .apply {
+                        duration = 275
+                    })
+            }
+
             bFolder.text = "unfold"
         }
     }
-
 
     private fun factorial()// add on screen factorial sign
     {
