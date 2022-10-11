@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">calculator</string>
+    <string name="start">  </string>
+    <string name = "errorMessage"> Error </string>
+    <string name="credits"> This my first project with android studio.\n
+    It\'s a simple calculator which can make simple operations and count some functions (e.g. sin/cos or root/power).\n
+    I hope you will not be strict in grading my app.\n
+    click everywhere to go back to calculator</string>
+
+</resources>

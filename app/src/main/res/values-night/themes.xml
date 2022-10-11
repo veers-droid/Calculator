@@ -1,0 +1,29 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.FirstProject" parent="Theme.AppCompat.DayNight">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="NoBar" parent="Theme.AppCompat.NoActionBar">
+    </style>
+
+    <style name="TransparentButtons">
+        <item name="android:background">@drawable/oval_button</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TransparentButtons.Symbols" parent="TransparentButtons">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+    <style name="TransparentButtons.Additional" parent="TransparentButtons">
+        <item name="android:alpha">0.3</item>
+    </style>
+
+    <style name="CalcRows">
+        <item name="android:gravity">end</item>
+        <item name="android:paddingLeft">12dp</item>
+    </style>
+</resources>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clean"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity"
+    tools:ignore="HardcodedText">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/main_txt"
+        android:layout_marginStart="12dp"
+        android:isScrollContainer="true"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="true">
+
+        <TextView
+            android:id="@+id/story_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:enabled="true"
+            android:alpha="0.3"
+            android:isScrollContainer="true"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="true"
+            android:text=""
+            android:textSize="26sp"
+            app:layout_constraintBottom_toTopOf="@+id/main_txt"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/main_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:gravity="end"
+        android:isScrollContainer="true"
+        android:text=""
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttons"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TableLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:id="@+id/additionalRow"
+            style="@style/CalcRows"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/onFactorial"
+                style="@style/TransparentButtons.Additional"
+                android:text="x!" />
+
+            <Button
+                android:id="@+id/squareRoot"
+                style="@style/TransparentButtons.Additional"
+                android:text="√x" />
+
+            <Button
+                android:id="@+id/toPower"
+                style="@style/TransparentButtons.Additional"
+                android:text="x^y" />
+
+            <Button
+                android:id="@+id/openParenthesis"
+                style="@style/TransparentButtons.Additional"
+                android:onClick="onParenthesisClick"
+                android:text="(" />
+
+            <Button
+                android:id="@+id/closeParenthesis"
+                style="@style/TransparentButtons.Additional"
+                android:onClick="onParenthesisClick"
+                android:text=")" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/firstRow"
+            style="@style/CalcRows">
+
+            <Button
+                android:id="@+id/lnX"
+                style="@style/TransparentButtons.Additional"
+                android:onClick="onFunctionClick"
+                android:text="ln"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bCleanOne"
+                style="@style/TransparentButtons.Symbols"
+                android:enabled="true"
+                android:onClick="onDelClick"
+                android:text="del" />
+
+            <Button
+                android:id="@+id/bCleanAll"
+                style="@style/TransparentButtons.Symbols"
+                android:onClick="onDelClick"
+                android:text="C" />
+
+            <Button
+                android:id="@+id/percent"
+                style="@style/TransparentButtons.Symbols"
+                android:text="%" />
+
+            <Button
+                android:id="@+id/bDiv"
+                style="@style/TransparentButtons.Symbols"
+                android:onClick="onOperationClick"
+                android:text="/" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/secondRow"
+            style="@style/CalcRows">
+
+            <Button
+                android:id="@+id/lgX"
+                style="@style/TransparentButtons.Additional"
+                android:onClick="onFunctionClick"
+                android:text="lg"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/num7"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/num8"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/num9"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="9" />
+
+            <Button
+                android:id="@+id/bMultiplicity"
+                style="@style/TransparentButtons.Symbols"
+                android:onClick="onOperationClick"
+                android:text="*" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/thirdRow"
+            style="@style/CalcRows">
+
+            <Button
+                android:id="@+id/tgX"
+                style="@style/TransparentButtons.Additional"
+                android:onClick="onFunctionClick"
+                android:text="tan"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/num4"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/num5"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/num6"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="6" />
+
+            <Button
+                android:id="@+id/bSub"
+                style="@style/TransparentButtons.Symbols"
+                android:onClick="onOperationClick"
+                android:text="-" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fourthRow"
+            style="@style/CalcRows">
+
+            <Button
+                android:id="@+id/cosX"
+                style="@style/TransparentButtons.Additional"
+                android:onClick="onFunctionClick"
+                android:text="cos"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/num1"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/num2"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/num3"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="3"
+                app:layout_constraintBottom_toTopOf="@+id/bDecPoint"
+                app:layout_constraintStart_toEndOf="@+id/num2" />
+
+            <Button
+                android:id="@+id/bSum"
+                style="@style/TransparentButtons.Symbols"
+                android:onClick="onOperationClick"
+                android:text="+" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fifthRow"
+            style="@style/CalcRows">
+
+            <Button
+                android:id="@+id/sinX"
+                style="@style/TransparentButtons.Additional"
+                android:onClick="onFunctionClick"
+                android:text="sin"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bFolder"
+                style="@style/TransparentButtons.Symbols"
+                android:text="unfold" />
+
+            <Button
+                android:id="@+id/num0"
+                style="@style/TransparentButtons"
+                android:onClick="onNumberClick"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/bDecPoint"
+                style="@style/TransparentButtons"
+                android:text="," />
+
+            <Button
+                android:id="@+id/isEqual"
+                android:background="@drawable/equals_button"
+                android:text="="
+                tools:ignore="ButtonStyle" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>
