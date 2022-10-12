@@ -35,7 +35,7 @@ image 2.1 and image 2.2 the calculator menu in engineering mode in light and dar
 ## Activities
 My android application has two activities for now
   * [Main Activity](#main-activity) (the activity where all the logic goes)
-  * - [Services](#services) ([output controller](output-controller) and counter where realised our logic with counting written expression and creating expressions in right way)
+  * - [Services](#services) ( [output controller](#output-controller) and [counter](#counter) where realised our logic with counting written expression and creating expressions in right way)
   * About_Us Activity (the one where the short info about the app shown)
   
 ## Main Activity
@@ -60,7 +60,7 @@ And for single action buttons (such as switcher to engineering mode button) add 
  ## Output Controller
  the first one interface <b>OutputController</b> has implementation with the such name <b>OutputControllerImpl</b></br>
  its root - <i>/services/output</i></br>
-This service we need for creating beautiful expression for user and correct for our exp4j libbrary so it can parse and count correct</b>
+This service we need for creating beautiful expression for user and correct for our exp4j libbrary so it can parse and count correct</b></br>
 There we have such functions:
 *     fun addNumber(clicked: View, output: TextView, expression: Array<String>)
 *     fun addBasicOperationSymbol(clicked: View, output: TextView, expression: Array<String>)
@@ -81,15 +81,49 @@ This function invokes after clicking by a digit button and adds a chosen digit t
 <b>Exceptions</b> (when we don't add a number or change our expression after adding):
 + If we trying to add number after getting our answer (isAnsswer flag is true) we erase answer and then add our number
 ### addBasicOperationSymbol
-We call this function after clicking on signs of basic arithmetic operation to add it to the end of our expression
-<b>Exceptions</b>
+We call this function after clicking on signs of basic arithmetic operation to add it to the end of our expression</br>
+<b>Exceptions:</b>
 + if our expression is empty we can add only an unary minus (thw same for open parenthesis)
 + to other binary operator we can add only unary minus, in other case we changes this operators (if we add unary minus we should add open parenthesis for better readability)
 ### del
-This functions invokes after clicking by one of two del buttons and deletes one element of expression or all expression (depends on clicked button)
-<b>Specification</b>
+This functions invokes after clicking by one of two del buttons and deletes one element of expression or all expression (depends on clicked button)</br>
+<b>Specification:</b>
 + after deleting one element we must reset flags, if deleting all set all flags at false value
 + if we deleting "(" sign we must delete function name if we have
 + terminate function if the text is already empty
 ### addParenthesis
-This function adds open or close parenthesis to our expression
+  This function adds open or close parenthesis to our expression</br>
+  <b>Exceptions:</b>
+  + If we add open parenthesis and the last symbol is dot, delete dot and then add parenthesis
+  + We cannot add if the last symbol is not a numeric or if close parenthesis will be more than open one
+  + We can't add close parenthesis if the expression is empty
+### addDecimalPoint
+  this funcction add dot sign to our number</br>
+  <b>Exceptions:</b>
+  + we cannot add dot sign if last symbol is not numeric
+  + before adding we must check if the number already contains a dot because we cannot have 2 dots in one number
+### equalOutput
+  This function invokes Counter class ti count our expression after parsing our expression</br>
+  <b>Sprecifications:</b>
+  + remove from the end function without body
+  + remove binary operators and dot from the end
+  + add missing close parenthesis
+  + add expression to story
+  + invoke Counter class
+### addPower
+  This function adds power sign <b>"^"</b> to our expression workwith the same logic as <b>[addBasicOperationSymbol](#addbasicoperationsymbol)</b>
+### addRoot
+  This function adds root sign <b>"√"</b> to output expression and <b>"sqrt("</b> to our expression</br>
+  <b>Exceptions:</b>
+  +if the last symbol is dot delete it before adding root sign
+### addFunction
+  This function adds the functions to output and iths exp4j representation to expression 
+### isSign
+  This function implemented in interface to check is the last symbol is binary operator
+### hasDot
+  This function implemented in interface to check if our number has a dot
+### getLastNumber
+  This function is implemented in interfase to get a last number from expression for <b>hasDot</b> function
+### setFlagsAfterDel
+  This function implemented in interface to reset flags after <b>del</b> function invocation
+## Counter
