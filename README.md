@@ -3,6 +3,7 @@
   - [Description](#description)
   - [Modes](#modes)
   - [Activities](#activities)
+  - [Other features](#other-features)
 ## Description
 This is a simple calculator app for android</br>
 which can operate with such functions:
@@ -21,22 +22,23 @@ Also it has both dark and light themes which automaticaly switches depends on yo
   
 ## Simple mode 
 Provides us with basic arithmetical operations and percent counting</br>
-![image](https://user-images.githubusercontent.com/56542846/195209419-58a16236-2aa5-467b-9a31-8e87dcedd5d6.png)
-![image](https://user-images.githubusercontent.com/56542846/195209454-e2744168-5bd2-4639-b2c8-00d3b60c2071.png)
-
-image 1.1 and image 1.2 the calculator menu in simple mode in light and hight themes
+![image](https://user-images.githubusercontent.com/56542846/195209419-58a16236-2aa5-467b-9a31-8e87dcedd5d6.png)</br>
+image 1.1 the calculator menu in simple mode in light theme</br>
+![image](https://user-images.githubusercontent.com/56542846/195209454-e2744168-5bd2-4639-b2c8-00d3b60c2071.png)</br>
+image 1.2 the calculator menu in simple mode in hight theme
 ## Engineering mode
 This mode provides us with other functions from previously listed</br>
-![image](https://user-images.githubusercontent.com/56542846/195210482-9609fb5e-bb1b-4a8b-9903-90a5b02b3805.png)
-![image](https://user-images.githubusercontent.com/56542846/195210511-6baa268b-b102-4688-80d7-6574a7d197ac.png)
-
-image 2.1 and image 2.2 the calculator menu in engineering mode in light and dark themes
+![image](https://user-images.githubusercontent.com/56542846/195210482-9609fb5e-bb1b-4a8b-9903-90a5b02b3805.png)</br>
+image 2.1  in engineering mode in light theme</br>
+![image](https://user-images.githubusercontent.com/56542846/195210511-6baa268b-b102-4688-80d7-6574a7d197ac.png)</br>
+image 2.2 the calculator menu in engineering mode in dark theme
 
 ## Activities
 My android application has two activities for now
   * [Main Activity](#main-activity) (the activity where all the logic goes)
   * - [Services](#services) ( [output controller](#output-controller) and [counter](#counter) where realised our logic with counting written expression and creating expressions in right way)
-  * About_Us Activity (the one where the short info about the app shown)
+  * [About_Us](#about-us) Activity (the one where the short info about the app shown)
+  * [Menu](#menu) activities
   
 ## Main Activity
 images 1 and 2 shows us how this activity looks.</br>
@@ -127,3 +129,43 @@ This functions invokes after clicking by one of two del buttons and deletes one 
 ### setFlagsAfterDel
   This function implemented in interface to reset flags after <b>del</b> function invocation
 ## Counter
+the first one interface <b>Counter</b> has implementation with the such name <b>CounterImpl</b></br>
+ its root - <i>/services/counter</i></br>
+ This service we use for calculating part or all our expression and show thr result to user</br>
+ There we have such functions:
++      fun countPercent(input:TextView, expression:Array<String>)
++      fun countAnswer(expression: Array<String>, output: TextView)
+Short description below:
+### countPercent
+This function gets last number drom expression, divides it by 100 and replaces this number with our answer</br>
+<b>Excceptions:</b></br>
++ we can't count if our expression is empty
++ we can't count percent if last symbol is non-digit
+### countAnswer
+This function gets our expression if it can't count throw <i>ArithmeticException</i></br>
+<b>Specification:</b></br>
++ we should remove ".0" tail for better look
++ we round answer to first 5 symbols after dot sign
+## About Us 
+It's a simple activity where we have scrolling text with short description about me and my app to leave this activity just tap on the screen
+## Menu
+At the moment I have only one menu activity for main activity in which we can:
++ clean the history
++ go to about us activity
+This menu looks like this for both themes:</br>
+![image](https://user-images.githubusercontent.com/56542846/195561056-5a278dce-3cb5-4623-a211-7ded57bf8a1d.png)</br>
+image 3.1 menu activity in light theme</br>
+![image](https://user-images.githubusercontent.com/56542846/195561158-647f2f85-5be4-4b35-8b1f-bcde6a169773.png)</br>
+ image 3.2 menu activity in dark theme
+## Other features
+As you can guess my application has dark/light modes automaticaly sets by your system property.</br>
+This setting written in App class which relates to all app the codesheet below:</br>
+
+    override fun onCreate() {
+        super.onCreate()
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO)
+    }
+    
+Also I create animation for switching to enginnering mode
+## Furthest versions
+In next version I'm planning to add currency coverters and other converters (e.g. Area, length, weigth, etc.)
