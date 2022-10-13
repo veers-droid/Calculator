@@ -5,7 +5,8 @@
   - [Activities](#activities)
   - [Other features](#other-features)
 ## Description
-This is a simple calculator app for android</br>
+This is a simple calculator app for android.</br>
+Now only for portrait orientation
 which can operate with such functions:
   * Basic mathematical operations (e.g. "+", "-", "*", "/")
   * Opeartions with parenthesis
@@ -168,4 +169,5 @@ This setting written in App class which relates to all app the codesheet below:<
     
 Also I create animation for switching to enginnering mode
 ## Furthest versions
-In next version I'm planning to add currency coverters and other converters (e.g. Area, length, weigth, etc.)
+In next version I'm planning to add currency coverters and other converters (e.g. Area, length, weigth, etc.)</br>
+and add album orientation
