@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity()
         txtInput = findViewById(R.id.main_txt)
         storyOutput = findViewById(R.id.story_txt)
 
-
         bDecPoint.setOnClickListener()
         {
             if (isAnswer)//add answer for previous expression to story
@@ -115,8 +114,6 @@ class MainActivity : AppCompatActivity()
             outputController.addRoot(txtInput, expression)
             isAnswer = false
         }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean

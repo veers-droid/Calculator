@@ -44,7 +44,6 @@ class OutputControllerImpl: OutputController
 
     override fun addBasicOperationSymbol(clicked: View, output: TextView, expression: Array<String>)
     {
-
         val button: Button = clicked as Button
         val num = button.text as String
         if(output.text.isEmpty()
@@ -83,7 +82,6 @@ class OutputControllerImpl: OutputController
             output.append(num)
             expression[0] += num
         }
-
         lastNumeric = false
         isAnswer = false
         lastFunction = false
@@ -148,7 +146,6 @@ class OutputControllerImpl: OutputController
             expression[0] = expression[0].dropLast(4)
             setFlagsAfterDel(output.text.toString())
         }
-
         output.text = output.text.toString().dropLast(1)// delete open parenthesis
         expression[0] = expression[0].dropLast(1)
         setFlagsAfterDel(output.text.toString())
@@ -161,7 +158,7 @@ class OutputControllerImpl: OutputController
 
         if (parenthesis == "(")
         {
-            if (output.text.last() == '.')
+            if (output.text.isNotEmpty() && output.text.last() == '.')
             {
                 del(false, output, expression)
             }
@@ -209,15 +206,16 @@ class OutputControllerImpl: OutputController
     {
         counter = CounterImpl()
 
-
         if (lastFunction)//can't evaluate if function without the body
         {
             del(false, output, expression)
         }
+
         if (expression[0].isEmpty())//if string is empty, nothing to do
         {
             return
         }
+
         if (isSign(output.text.toString())// also we should remove operation sign and dot from the end
             || output.text.last() == '.')
         {
@@ -244,7 +242,6 @@ class OutputControllerImpl: OutputController
                 story.append("\n${output.text}")
             }
         }
-
         // Create an Expression (A class from exp4j library)
         counter.countAnswer(expression, output)
     }
@@ -279,7 +276,8 @@ class OutputControllerImpl: OutputController
         isAnswer = false
     }
 
-    override fun addFunction(clicked: View, output: TextView, expression: Array<String>) {
+    override fun addFunction(clicked: View, output: TextView, expression: Array<String>)
+    {
         val button: Button = clicked as Button
 
         when (val func: String = button.text.toString())
