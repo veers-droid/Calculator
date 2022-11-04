@@ -1,11 +1,14 @@
-package com.example.firstproject.service.counter.impl
+package com.example.firstproject.calculator.service.counter.impl
 
 import android.widget.TextView
 import com.example.firstproject.R
-import com.example.firstproject.activities.*
-import com.example.firstproject.service.counter.Counter
-import com.example.firstproject.service.output.OutputController
-import com.example.firstproject.service.output.impl.OutputControllerImpl
+import com.example.firstproject.calculator.isAnswer
+import com.example.firstproject.calculator.lastFunction
+import com.example.firstproject.calculator.lastNumeric
+import com.example.firstproject.calculator.stateError
+import com.example.firstproject.calculator.service.counter.Counter
+import com.example.firstproject.calculator.service.output.OutputController
+import com.example.firstproject.calculator.service.output.impl.OutputControllerImpl
 import net.objecthunter.exp4j.ExpressionBuilder
 import net.objecthunter.exp4j.operator.Operator
 import kotlin.math.roundToInt

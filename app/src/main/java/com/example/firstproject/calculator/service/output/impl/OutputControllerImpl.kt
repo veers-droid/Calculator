@@ -1,12 +1,12 @@
-package com.example.firstproject.service.output.impl
+package com.example.firstproject.calculator.service.output.impl
 
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import com.example.firstproject.activities.*
-import com.example.firstproject.service.counter.Counter
-import com.example.firstproject.service.counter.impl.CounterImpl
-import com.example.firstproject.service.output.OutputController
+import com.example.firstproject.calculator.*
+import com.example.firstproject.calculator.service.counter.Counter
+import com.example.firstproject.calculator.service.counter.impl.CounterImpl
+import com.example.firstproject.calculator.service.output.OutputController
 
 
 
@@ -259,6 +259,7 @@ class OutputControllerImpl: OutputController
             del(false, output, expression)
         }
         output.append("^")
+        expression[0] += "^"
         lastNumeric = false; isAnswer = false
     }
 

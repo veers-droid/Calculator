@@ -10,8 +10,10 @@
 
     <style name="TransparentButtons">
         <item name="android:background">@drawable/oval_button</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TransparentButtons.Numbers" parent="TransparentButtons">
+        <item name="android:contentDescription">number</item>
     </style>
 
     <style name="TransparentButtons.Symbols" parent="TransparentButtons">
