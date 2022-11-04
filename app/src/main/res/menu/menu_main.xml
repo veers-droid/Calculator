@@ -5,13 +5,25 @@
     tools:context=".activities.MainActivity"
     tools:ignore="HardcodedText">
     <item
-        android:id="@+id/aboutUs"
-        android:orderInCategory="2"
-        android:title="About us"
-        app:showAsAction="never" />
+        android:id="@+id/home"
+        android:icon="@drawable/home_image"
+        android:title=""
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/converters"
+        android:icon="@drawable/converters_image"
+        app:showAsAction="ifRoom"
+        android:title="converters"/>
+
     <item
         android:id="@+id/clear"
-        android:orderInCategory="1"
+        android:orderInCategory="2"
         android:title="clear"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/aboutUs"
+        android:orderInCategory="3"
+        android:title="About us"
+        app:showAsAction="never"/>
 </menu>

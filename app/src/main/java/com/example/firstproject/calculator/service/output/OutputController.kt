@@ -1,11 +1,11 @@
-package com.example.firstproject.service.output
+package com.example.firstproject.calculator.service.output
 
 import android.view.View
 import android.widget.TextView
-import com.example.firstproject.activities.isAnswer
-import com.example.firstproject.activities.lastFunction
-import com.example.firstproject.activities.lastNumeric
-import com.example.firstproject.activities.parenthesisCounter
+import com.example.firstproject.calculator.isAnswer
+import com.example.firstproject.calculator.lastFunction
+import com.example.firstproject.calculator.lastNumeric
+import com.example.firstproject.calculator.parenthesisCounter
 
 interface OutputController
 {

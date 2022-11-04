@@ -1,4 +1,4 @@
-package com.example.firstproject.service.counter
+package com.example.firstproject.calculator.service.counter
 
 import android.widget.TextView
 

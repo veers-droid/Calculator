@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".activities.info.AboutUs"
             android:theme="@style/NoBar"/>
+        <activity android:name=".activities.converters.CurrencyConverterActivity"/>
     </application>
 
 </manifest>

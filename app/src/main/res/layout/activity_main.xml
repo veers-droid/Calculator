@@ -65,28 +65,36 @@
             <Button
                 android:id="@+id/onFactorial"
                 style="@style/TransparentButtons.Additional"
+                android:contentDescription="factorial"
+                android:onClick="handleButton"
                 android:text="x!" />
 
             <Button
                 android:id="@+id/squareRoot"
                 style="@style/TransparentButtons.Additional"
+                android:contentDescription="sqrt"
+                android:onClick="handleButton"
                 android:text="√x" />
 
             <Button
                 android:id="@+id/toPower"
                 style="@style/TransparentButtons.Additional"
+                android:contentDescription="power"
+                android:onClick="handleButton"
                 android:text="x^y" />
 
             <Button
                 android:id="@+id/openParenthesis"
                 style="@style/TransparentButtons.Additional"
-                android:onClick="onParenthesisClick"
+                android:onClick="handleButton"
+                android:contentDescription="parenthesis"
                 android:text="(" />
 
             <Button
                 android:id="@+id/closeParenthesis"
                 style="@style/TransparentButtons.Additional"
-                android:onClick="onParenthesisClick"
+                android:onClick="handleButton"
+                android:contentDescription="parenthesis"
                 android:text=")" />
         </TableRow>
 
@@ -97,32 +105,39 @@
             <Button
                 android:id="@+id/lnX"
                 style="@style/TransparentButtons.Additional"
-                android:onClick="onFunctionClick"
+                android:onClick="handleButton"
                 android:text="ln"
+                android:contentDescription="function"
                 android:visibility="gone" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/bCleanOne"
+                android:src="@drawable/delete_image"
+                android:layout_height="match_parent"
                 style="@style/TransparentButtons.Symbols"
                 android:enabled="true"
-                android:onClick="onDelClick"
-                android:text="del" />
+                android:onClick="handleButton"
+                android:contentDescription="del" />
 
             <Button
                 android:id="@+id/bCleanAll"
                 style="@style/TransparentButtons.Symbols"
-                android:onClick="onDelClick"
+                android:onClick="handleButton"
+                android:contentDescription="delAll"
                 android:text="C" />
 
             <Button
                 android:id="@+id/percent"
+                android:onClick="handleButton"
                 style="@style/TransparentButtons.Symbols"
+                android:contentDescription="percent"
                 android:text="%" />
 
             <Button
                 android:id="@+id/bDiv"
                 style="@style/TransparentButtons.Symbols"
-                android:onClick="onOperationClick"
+                android:onClick="handleButton"
+                android:contentDescription="operation"
                 android:text="/" />
         </TableRow>
 
@@ -133,32 +148,34 @@
             <Button
                 android:id="@+id/lgX"
                 style="@style/TransparentButtons.Additional"
-                android:onClick="onFunctionClick"
+                android:onClick="handleButton"
                 android:text="lg"
+                android:contentDescription="function"
                 android:visibility="gone" />
 
             <Button
                 android:id="@+id/num7"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="7" />
 
             <Button
                 android:id="@+id/num8"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="8" />
 
             <Button
                 android:id="@+id/num9"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="9" />
 
             <Button
                 android:id="@+id/bMultiplicity"
                 style="@style/TransparentButtons.Symbols"
-                android:onClick="onOperationClick"
+                android:onClick="handleButton"
+                android:contentDescription="operation"
                 android:text="*" />
 
 
@@ -171,32 +188,34 @@
             <Button
                 android:id="@+id/tgX"
                 style="@style/TransparentButtons.Additional"
-                android:onClick="onFunctionClick"
+                android:onClick="handleButton"
                 android:text="tan"
+                android:contentDescription="function"
                 android:visibility="gone" />
 
             <Button
                 android:id="@+id/num4"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="4" />
 
             <Button
                 android:id="@+id/num5"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="5" />
 
             <Button
                 android:id="@+id/num6"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="6" />
 
             <Button
                 android:id="@+id/bSub"
                 style="@style/TransparentButtons.Symbols"
-                android:onClick="onOperationClick"
+                android:onClick="handleButton"
+                android:contentDescription="operation"
                 android:text="-" />
 
         </TableRow>
@@ -208,26 +227,27 @@
             <Button
                 android:id="@+id/cosX"
                 style="@style/TransparentButtons.Additional"
-                android:onClick="onFunctionClick"
+                android:onClick="handleButton"
+                android:contentDescription="function"
                 android:text="cos"
                 android:visibility="gone" />
 
             <Button
                 android:id="@+id/num1"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="1" />
 
             <Button
                 android:id="@+id/num2"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="2" />
 
             <Button
                 android:id="@+id/num3"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="3"
                 app:layout_constraintBottom_toTopOf="@+id/bDecPoint"
                 app:layout_constraintStart_toEndOf="@+id/num2" />
@@ -235,7 +255,8 @@
             <Button
                 android:id="@+id/bSum"
                 style="@style/TransparentButtons.Symbols"
-                android:onClick="onOperationClick"
+                android:onClick="handleButton"
+                android:contentDescription="operation"
                 android:text="+" />
 
         </TableRow>
@@ -247,7 +268,8 @@
             <Button
                 android:id="@+id/sinX"
                 style="@style/TransparentButtons.Additional"
-                android:onClick="onFunctionClick"
+                android:onClick="handleButton"
+                android:contentDescription="function"
                 android:text="sin"
                 android:visibility="gone" />
 
@@ -258,17 +280,21 @@
 
             <Button
                 android:id="@+id/num0"
-                style="@style/TransparentButtons"
-                android:onClick="onNumberClick"
+                style="@style/TransparentButtons.Numbers"
+                android:onClick="handleButton"
                 android:text="0" />
 
             <Button
                 android:id="@+id/bDecPoint"
                 style="@style/TransparentButtons"
+                android:onClick="handleButton"
+                android:contentDescription="decimal"
                 android:text="," />
 
             <Button
                 android:id="@+id/isEqual"
+                android:contentDescription="equal"
+                android:onClick="handleButton"
                 android:background="@drawable/equals_button"
                 android:text="="
                 tools:ignore="ButtonStyle" />
